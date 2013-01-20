@@ -1,0 +1,17 @@
+[
+    {
+        "repository": "corvusmod/android_hardware_realtek",
+        "target_path": "hardware/realtek",
+        "branch": "jellybean"
+    },
+    {
+        "repository": "corvusmod/android_external_cedarx",
+        "target_path": "external/cedarx",
+        "branch": "jellybean"
+    },
+    {
+        "repository": "corvusmod/hardware_libhardware",
+        "target_path": "hardware/libhardware",
+        "branch": "jb-allwinner"
+    }
+]
