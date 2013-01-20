@@ -10,9 +10,22 @@ on early-init
 	symlink /storage/sdcard1 /mnt/extsd
 
 on fs
-    mount ext4 /dev/block/nandd /system wait ro
-    mount ext4 /dev/block/nande /data wait noatime nosuid nodev
-    mount ext4 /dev/block/nandh /cache wait noatime nosuid nodev
+    mount ext4 /dev/block/nandd /system wait rw
+
+	wait /dev/block/nande
+        mount ext4 /dev/block/nande /data wait noatime nosuid nodev barrier=0
+        setupfs /dev/block/nande
+        umount /data
+        exec /system/bin/logwrapper /system/bin/e2fsck -y /dev/block/nande
+        exec /system/xbin/busybox mount -t ext4 -o noatime,nosuid,nodev,barrier=0,journal_checksum,noauto_da_alloc /dev/block/nande /data
+
+	mount ext4 /dev/block/nandh /cache wait noatime nosuid nodev barrier=0
+        setupfs /dev/block/nandh
+        umount /cache
+	exec /system/bin/logwrapper /system/bin/e2fsck -y /dev/block/nandh
+	exec /system/xbin/busybox mount -t ext4 -o noatime,nosuid,nodev,barrier=0,journal_checksum,noauto_da_alloc /dev/block/nandh /cache
+
+    	format_userdata /dev/block/nandi Dragon
 
 on boot	
         # Enable interactive governor
@@ -68,7 +81,7 @@ on boot
 	insmod /system/lib/modules/mcs7830.ko
 	insmod /system/lib/modules/rtl8150.ko
 	# misc
-	chown system system /sys/class/timed_output/sun4i-vibrator/enable
+	#chown system system /sys/class/timed_output/sun4i-vibrator/enable
 	chown system system /sys/class/rfkill/rfkill0/state
 	chmod 0777  /sys/class/rfkill/rfkill0/state
 	write /sys/class/rfkill/rfkill0/state 0
@@ -126,7 +139,7 @@ service iprenew_eth0 /system/bin/dhcpcd -n
     oneshot
 
 service memsicd /system/bin/logwrapper /system/bin/memsicd
-   class troy
+   class memsicd
    oneshot
 
 on property:dev.bootcomplete=1

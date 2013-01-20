@@ -28,11 +28,11 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
-#ARCH_ARM_HAVE_VFP := true
-#TARGET_ARCH_VARIANT_CPU := cortex-a9
-#TARGET_ARCH_VARIANT_FPU := neon
-#ARCH_ARM_HAVE_NEON := true
-#ARCH_ARM_HAVE_ARMV7A := true
+ARCH_ARM_HAVE_VFP := true
+TARGET_ARCH_VARIANT_CPU := cortex-a8
+TARGET_ARCH_VARIANT_FPU := neon
+ARCH_ARM_HAVE_NEON := true
+ARCH_ARM_HAVE_ARMV7A := true
 TARGET_GLOBAL_CFLAGS += -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp
 ARCH_ARM_HAVE_TLS_REGISTER := true
@@ -72,6 +72,7 @@ BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_rtl
 BOARD_HOSTAPD_DRIVER        := WEXT
 BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_rtl
+BOARD_WIFI_VENDOR	:= realtek
 
 BOARD_WLAN_DEVICE := rtl8192cu
 

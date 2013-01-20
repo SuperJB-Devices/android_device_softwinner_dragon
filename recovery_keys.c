@@ -24,7 +24,7 @@ int device_handle_key(int key_code, int visible) {
             case KEY_2:
             case KEY_POWER:
                 return SELECT_ITEM;
-
+            
 	    case 158:
 	    case KEY_1:
             case KEY_ESC:
