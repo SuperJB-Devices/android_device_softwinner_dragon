@@ -19,8 +19,8 @@ $(call inherit-product, device/softwinner/dragon/dragon-blobs.mk)
 $(call inherit-product, device/softwinner/dragon/libraries/Android.mk)
 $(call inherit-product, device/softwinner/dragon/packages/Android.mk)
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
-$(call inherit-product, vendor/cm/config/gsm.mk)
-$(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, vendor/osr/config/gsm.mk)
+$(call inherit-product, vendor/osr/config/common_full_tablet_wifionly.mk)
 $(call inherit-product-if-exists, vendor/softwinner/dragon/dragon-vendor.mk)
 
 
