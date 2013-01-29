@@ -133,8 +133,8 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, build/target/product/full_base.mk)
 
 # Should be after the full_base include, which loads languages_full
-PRODUCT_AAPT_CONFIG := large xlarge mdpi
-PRODUCT_AAPT_PREF_CONFIG := mdpi
+PRODUCT_AAPT_CONFIG := large xlarge hdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 PRODUCT_NAME := full_dragon
 PRODUCT_DEVICE := dragon

@@ -22,12 +22,12 @@ $(call inherit-product, vendor/osr/config/common_full_tablet_wifionly.mk)
 $(call inherit-product, device/softwinner/dragon/full_dragon.mk)
 
 # Add Google apps
-$(call inherit-product, vendor/google/minimal.mk)
-$(call inherit-product, vendor/google/products/maps_support.mk)
-$(call inherit-product, vendor/google/products/youtube_support.mk)
+#$(call inherit-product, vendor/google/minimal.mk)
+#$(call inherit-product, vendor/google/products/maps_support.mk)
+#$(call inherit-product, vendor/google/products/youtube_support.mk)
 
 # Addons personal (call files from vendor/osr/prebuilt/app)
-$(call inherit-product, vendor/osr/addons/superatmel.mk)
+#$(call inherit-product, vendor/osr/addons/superatmel.mk)
 
 PRODUCT_NAME := osr_dragon
 PRODUCT_BRAND := Allwinner

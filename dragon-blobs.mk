@@ -24,6 +24,10 @@ PRODUCT_COPY_FILES += \
 	device/softwinner/dragon/prebuilt/bin/usb_modeswitch:system/bin/usb_modeswitch \
 	device/softwinner/dragon/prebuilt/bin/rild:system/bin/rild
 
+# /system/media
+PRODUCT_COPY_FILES += \
+	device/softwinner/dragon/prebuilt/media/bootanimation.zip:system/media/bootanimation.zip	
+	
 # /system/etc
 PRODUCT_COPY_FILES += \
 	device/softwinner/dragon/prebuilt/etc/ppp/ip-down:system/etc/ppp/ip-down \
