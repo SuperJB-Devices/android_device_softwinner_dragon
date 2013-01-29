@@ -13,10 +13,5 @@
         "repository": "corvusmod/hardware_libhardware",
         "target_path": "hardware/libhardware",
         "branch": "jb-allwinner"
-    },
-    {
-        "repository": "blerfont/android_bootable_recovery",
-        "target_path": "bootable/recovery",
-        "branch": "jellybean"
     }
 ]
